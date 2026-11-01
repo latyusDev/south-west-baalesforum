@@ -204,7 +204,7 @@ USER DETAILS
         >
           <motion.h2
             variants={fadeUp}
-            className="text-center text-2xl font-semibold"
+            className="text-center  text-2xl font-semibold"
           >
             Send Us a Message
           </motion.h2>
@@ -306,7 +306,7 @@ USER DETAILS
               type="submit"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-2 rounded bg-forest px-8 py-3 text-sm font-semibold text-white hover:bg-forest-dark"
+              className="inline-flex cursor-pointer items-center gap-2 rounded bg-forest px-8 py-3 text-sm font-semibold text-white hover:bg-forest-dark"
             >
               <Send size={15} />
               Send Message

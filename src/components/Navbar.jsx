@@ -24,7 +24,7 @@ export default function Navbar() {
           ))}
         </nav>
         <div className="hidden md:block">
-          <Button to="/contact" variant="green">Become a Member</Button>
+          <Button to="/membership" variant="green">Become a Member</Button>
 
         </div>
         <button className="md:hidden cursor-pointer" onClick={() => setOpen(!open)} aria-label="Menu">{open ? <X className="size-10" /> : <Menu className="size-10" />}</button>

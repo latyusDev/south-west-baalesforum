@@ -5,7 +5,8 @@ import { Logo } from "./ui.jsx";
 const Col = ({ title, items }) => (
   <div>
     <h4 className="mb-3 font-sans text-sm font-semibold">{title}</h4>
-    <ul className="space-y-2 text-xs text-white/70">{items.map((i) => <li key={i}><Link to="/">{i}</Link></li>)}</ul>
+    <ul className="space-y-2 text-xs text-white/70">{items.map((i) => <li key={i}>
+      {i}</li>)}</ul>
   </div>
 );
 
