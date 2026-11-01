@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Menu, Search, X } from "lucide-react";
 import { Logo, Button } from "./ui.jsx";
-import mobile_logo from '../../public/images/south-logo.png'
+import mobile_logo from '../../public/images/mobile_logo.png'
 
 const links = [["Home", "/"], ["About Us", "/about"], ["Membership", "/membership"], ["Contact Us", "/contact"]];
 
@@ -27,10 +27,10 @@ export default function Navbar() {
           <Button to="/contact" variant="green">Become a Member</Button>
 
         </div>
-        <button className="md:hidden" onClick={() => setOpen(!open)} aria-label="Menu">{open ? <X /> : <Menu />}</button>
+        <button className="md:hidden cursor-pointer" onClick={() => setOpen(!open)} aria-label="Menu">{open ? <X className="size-10" /> : <Menu className="size-10" />}</button>
       </div>
       {open && (
-        <nav className="flex flex-col gap-4 border-t px-6 py-4 md:hidden" onClick={() => setOpen(false)}>
+        <nav className="flex flex-col gap-4 border-t px-6 mt-3 py-4 md:hidden" onClick={() => setOpen(false)}>
           {links.map(([label, to]) => <NavLink key={label} to={to} className="text-sm">{label}</NavLink>)}
         </nav>
       )}

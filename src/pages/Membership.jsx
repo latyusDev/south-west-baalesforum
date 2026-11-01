@@ -261,11 +261,11 @@ export default function Membership() {
                   y: -6,
                   transition: { duration: 0.2 },
                 }}
-                className="rounded-md bg-white p-5 shadow-sm"
+                className="rounded-md text-center md:text-left bg-white p-5 shadow-sm"
               >
                 <motion.span
                   whileHover={{ scale: 1.15, rotate: 8 }}
-                  className="grid h-8 w-8 place-items-center rounded-full bg-forest text-sm font-semibold text-white"
+                  className="grid h-8 w-8 mx-auto md:ml-0 place-items-center rounded-full bg-forest text-sm font-semibold text-white"
                 >
                   {index + 1}
                 </motion.span>

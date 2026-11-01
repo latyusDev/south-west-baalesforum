@@ -133,7 +133,7 @@ USER DETAILS
         />
       </motion.div>
 
-      <Section>
+      <Section className="overflow-hidden">
         {/* Contact Information */}
         <motion.div
           variants={stagger}

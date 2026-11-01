@@ -10,6 +10,7 @@ const Col = ({ title, items }) => (
 );
 
 export default function Footer() {
+  const getYear = new Date().getFullYear()
   return (
     <footer className="bg-forest-dark text-white">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-12 md:grid-cols-[1.5fr_1fr_1fr_1.3fr]">
@@ -31,8 +32,7 @@ export default function Footer() {
       </div>
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-6xl justify-between px-6 py-4 text-[11px] text-white/60">
-          <span>© 2024 South-West Baales Forum. All rights reserved.</span>
-          <span className="flex gap-6"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></span>
+          <span>© {getYear} South-West Baales Forum. All rights reserved.</span>
         </div>
       </div>
     </footer>
