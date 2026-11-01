@@ -26,7 +26,7 @@ export default function Footer() {
           <h4 className="mb-3 text-sm font-semibold">Contact Info</h4>
           <ul className="space-y-3 text-xs text-white/70">
             <li className="flex gap-2"><MapPin size={14} className="shrink-0 text-gold" />61 Ijaola Street, Maryland, Lagos State</li>
-            <li className="flex gap-2"><Phone size={14} className="shrink-0 text-gold" />+234 803 123 4567<br />+234 809 987 6543</li>
+            <li className="flex gap-2"><Phone size={14} className="shrink-0 text-gold" />+234 816 204 6944<br />+234 816 204 6944</li>
             <li className="flex gap-2"><Mail size={14} className="shrink-0 text-gold" />info@swbaalesforum.org</li>
           </ul>
         </div>
