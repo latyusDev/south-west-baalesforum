@@ -11,6 +11,14 @@ const Col = ({ title, items }) => (
 );
 
 export default function Footer() {
+    const message = encodeURIComponent(
+    "Hello Chief (Dr) Seyi Bamigbade, I would like to make enquiry about the baale forum"
+  );
+        const phoneNumber = '+2348162046944'
+
+
+
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
   const getYear = new Date().getFullYear()
   return (
     <footer className="bg-forest-dark text-white">
@@ -25,8 +33,19 @@ export default function Footer() {
         <div>
           <h4 className="mb-3 text-sm font-semibold">Contact Info</h4>
           <ul className="space-y-3 text-xs text-white/70">
-            <li className="flex gap-2"><MapPin size={14} className="shrink-0 text-gold" />61 Ijaola Street, Maryland, Lagos State</li>
-            <li className="flex gap-2"><Phone size={14} className="shrink-0 text-gold" />+234 816 204 6944<br />+234 816 204 6944</li>
+            <li className="flex gap-2">
+              
+              <MapPin size={14} className="shrink-0 text-gold" />61 Ijaola Street, Maryland, Lagos State</li>
+            <li >
+              <a
+              className="flex gap-2"
+            href={whatsappUrl}>
+              <Phone size={14} className="shrink-0 text-gold" />+234 816 204 6944</a></li>
+            <li >
+              <a
+              className="flex gap-2"
+            href={whatsappUrl}>
+              <Phone size={14} className="shrink-0 text-gold" />+234 705 241 2602</a></li>
             <li className="flex gap-2"><Mail size={14} className="shrink-0 text-gold" />info@swbaalesforum.org</li>
           </ul>
         </div>

@@ -7,6 +7,7 @@ import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
 import Membership from "./pages/Membership.jsx";
 import ScrollToUp from './components/ScrollToUp.jsx'
+import WhatsAppButton from "./components/WhatsappButton.jsx";
 
 export default function App() {
   const { pathname } = useLocation();
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="*" element={<Home />} />
         </Routes>
       </main>
+      <WhatsAppButton/>
       <Footer />
     </>
   );
