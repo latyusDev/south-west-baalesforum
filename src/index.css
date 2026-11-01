@@ -1,0 +1,26 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-forest: #0f3d2b;
+  --color-forest-dark: #0a2b1e;
+  --color-gold: #c8993f;
+  --color-gold-dark: #a97d2a;
+  --color-cream: #f6f1e7;
+  --color-ink: #1f2a24;
+
+  --font-serif: "Lora", Georgia, serif;
+  --font-sans: "Inter", Arial, sans-serif;
+}
+
+body {
+  @apply font-sans text-ink bg-white antialiased;
+}
+
+h1,
+h2,
+h3 {
+  @apply font-serif font-semibold;
+}
+
