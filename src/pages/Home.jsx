@@ -20,7 +20,9 @@ import unity from "../../public/images/unity.jpg";
 import peace from "../../public/images/peace.jpg";
 import growth from "../../public/images/growth.jpg";
 import heritage from "../../public/images/heritage.jpg";
-import hamzat from "../../public/images/hamzat.jpg";
+import tinubu from "../../public/images/news/p_news.png";
+import tinubu2 from "../../public/images/news/p2_news.jpg";
+import tinubu3 from "../../public/images/news/p3_news.jpg";
 import resolution from "../../public/images/resolution.jpeg";
 import stake from "../../public/images/stake.jpeg";
 import ogun from "../../public/images/ogun-t.jpg";
@@ -87,24 +89,50 @@ const mission = [
 ];
 
 const news = [
-  [
-    "Leadership Update",
-    "Ganiyu Hamzat Appointed Co-Chairman of South-West Baales Forum BoT",
-    "Mar 15, 2024",
-    hamzat,
-  ],
-  [
-    "Engagement",
-    "Forum Strengthens Ties with South-West Development Commission",
-    "Mar 10, 2024",
-    resolution,
-  ],
-  [
-    "Communiqué",
-    "Resolutions from Regional Stakeholders' Meeting",
-    "Mar 5, 2024",
-    stake,
-  ],
+  {
+    id:1,
+    title:'2027: South-West Traditional Rulers Set To Present Reelection Blueprint For Tinubu, Shettima',
+    tag:'South-West Traditional Rulers',
+    date: 'October 23, 2026s',
+    image:tinubu,
+    link:"https://www.google.com/url?opi=89978449&q=https://independent.ng/2027-south-west-traditional-rulers-set-to-present-reelection-blueprint-for-tinubu-shettima/&sa=U&ved=2ahUKEwi00vby0OeXAxWMZ0EAHVwzAAUQxfQBKAB6BAgMEAE&usg=AOvVaw221bGaW8pTd9OYz_w3u6hs"
+  },
+  {
+    id:2,
+    title:'Southwest traditional rulers plan Tinubu’s 2027 re-election blueprint',
+    tag:'South-West Traditional Rulers',
+    date: '22nd October, 2026',
+    image:tinubu2,
+    link:'https://www.google.com/url?opi=89978449&q=https://pmnewsnigeria.com/2026/10/22/southwest-traditional-rulers-plan-tinubus-2027-re-election-blueprint/&sa=U&ved=2ahUKEwi00vby0OeXAxWMZ0EAHVwzAAUQxfQBKAB6BAgLEAE&usg=AOvVaw1mNp5FpkUOFoGwKfLRotC_'
+    
+  },
+  {
+    id:3,
+    title:'Baales, Mogajis in Ibadan back Tinubu for President',
+    tag:'Baales, Mogajis in Ibadan',
+    date: 'November 6, 2022 11:55 AM',
+    image:tinubu3,
+    link:'https://www.google.com/url?opi=89978449&q=https://pmnewsnigeria.com/2026/10/22/southwest-traditional-rulers-plan-tinubus-2027-re-election-blueprint/&sa=U&ved=2ahUKEwi00vby0OeXAxWMZ0EAHVwzAAUQxfQBKAB6BAgLEAE&usg=AOvVaw1mNp5FpkUOFoGwKfLRotC_'
+    
+  },
+  // [
+  //   "Leadership Update",
+  //   "Ganiyu Hamzat Appointed Co-Chairman of South-West Baales Forum BoT",
+  //   "Mar 15, 2024",
+  //   hamzat,
+  // ],
+  // [
+  //   "Engagement",
+  //   "Forum Strengthens Ties with South-West Development Commission",
+  //   "Mar 10, 2024",
+  //   resolution,
+  // ],
+  // [
+  //   "Communiqué",
+  //   "Resolutions from Regional Stakeholders' Meeting",
+  //   "Mar 5, 2024",
+  //   stake,
+  // ],
 ];
 
 const states = [
@@ -117,6 +145,10 @@ const states = [
 ];
 
 export default function Home() {
+
+  const handleNews = (link)=>{
+    window.location.href = link
+  }
   return (
     <>
       {/* Hero Section */}
@@ -383,13 +415,13 @@ export default function Home() {
             Latest News &amp; Updates
           </h2>
 
-          <motion.a
+          {/* <motion.a
             href="#news"
             className="flex shrink-0 items-center gap-1 text-xs"
             whileHover={{ x: 4 }}
           >
             View All News <ArrowRight size={12} />
-          </motion.a>
+          </motion.a> */}
         </motion.div>
 
         <motion.div
@@ -399,9 +431,9 @@ export default function Home() {
           whileInView="visible"
           viewport={{ once: false, amount: 0.1 }}
         >
-          {news.map(([tag, title, date, image]) => (
+          {news.map((newsItem) => (
             <motion.article
-              key={title}
+              key={newsItem.title}
               variants={cardVariant}
               whileHover={{
                 y: -7,
@@ -411,8 +443,8 @@ export default function Home() {
             >
               <div className="overflow-hidden">
                 <motion.img
-                  src={image}
-                  alt={title}
+                  src={newsItem.image}
+                  alt={newsItem.title}
                   className="h-60 w-full object-cover"
                   whileHover={{ scale: 1.06 }}
                   transition={{ duration: 0.4 }}
@@ -421,17 +453,27 @@ export default function Home() {
 
               <div className="p-4">
                 <span className="rounded bg-gold px-2 py-0.5 text-[10px] font-medium text-white">
-                  {tag}
+                  {newsItem.tag}
                 </span>
 
                 <h3 className="mt-3 font-sans text-lg font-bold leading-snug">
-                  {title}
+                  {newsItem.title}
                 </h3>
 
-                <p className="mt-3 flex items-center gap-1.5 text-[11px] text-ink/55">
+               <div className="flex items-center justify-between mt-4" >
+                   <p className=" flex items-center gap-1.5 text-[11px] text-ink/55">
                   <Calendar size={12} />
-                  {date}
+                  {newsItem.date}
                 </p>
+
+                <button onClick={()=>handleNews(newsItem.link)} className="group cursor-pointer inline-flex items-center gap-2 rounded-md bg-gold px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white shadow-sm transition-all duration-300 hover:bg-ink hover:shadow-md">
+              Learn More
+              <ArrowRight
+                size={14}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </button>
+               </div>
               </div>
             </motion.article>
           ))}
